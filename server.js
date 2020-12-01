@@ -3,8 +3,11 @@ const mongodb = require('mongodb');
 const mongoose = require('mongoose');
 // require('./env/config');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
+app.use(cors());
+
 const port = 3001;
 
 //Middlewares
