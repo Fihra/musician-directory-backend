@@ -17,6 +17,8 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     console.log(req.body)
     const musician = new Musician({
+        email: req.body.email,
+        password: req.body.password,
         name: req.body.name,
         instrument: req.body.instrument,
         alias: req.body.alias,

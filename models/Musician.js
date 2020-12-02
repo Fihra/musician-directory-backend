@@ -1,9 +1,17 @@
 const mongoose = require('mongoose');
 
 const MusicianSchema = mongoose.Schema({
-    name: {
+    email: {
+        type: String,
+        require: true,
+    },
+    password: {
         type: String,
         require: true
+    },
+    name: {
+        type: String,
+        require: false
     },
     avatar: {
         type: String,
@@ -16,7 +24,7 @@ const MusicianSchema = mongoose.Schema({
     },
     instrument: {
         type: String,
-        require: true
+        require: false
     },
     voiceRange: {
         type: String,
