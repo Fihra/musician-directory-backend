@@ -13,6 +13,23 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.post('/login', async (req, res) => {
+    console.log("email:", req.body.email);
+    console.log("password:", req.body.password);
+    let result = await Musician.findOne({email: req.body.email});
+    console.log(result);
+    if(result){
+        if(result.password === req.body.password){
+            res.status(200).send({ message: "Login Successful"});
+        } else {
+            req.status(200).send({ message: "Incorrect Password"});
+        }
+    } else {
+        res.status(200).send({ message: "User not found."})
+    }
+
+})
+
 //Creates new Musician
 router.post('/', async (req, res) => {
     console.log(req.body)
