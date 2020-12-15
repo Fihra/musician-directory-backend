@@ -20,7 +20,7 @@ router.post('/login', async (req, res) => {
     console.log(result);
     if(result){
         if(result.password === req.body.password){
-            res.status(200).send({ message: "Login Successful"});
+            res.status(200).send({ message: "Login Successful", musician: result});
         } else {
             req.status(200).send({ message: "Incorrect Password"});
         }
